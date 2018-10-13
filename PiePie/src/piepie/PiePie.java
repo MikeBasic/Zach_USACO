@@ -36,10 +36,25 @@ public class PiePie {
         System.out.println("Working Directory = " +
               System.getProperty("user.dir"));
         
+//        FileWriter fileWriter = new FileWriter("Mono_Pulse_48kHz.raw");
+//        PrintWriter printWriter = new PrintWriter(fileWriter);
+//        char [] buf = new char[2*48*3000];
+//        
+//        for (int i=0; i<2*48*3000; i++) {
+//            buf[i] = 0;
+//        }
+//        buf[1000] = 100;
+//        buf[1001] = 100;
+//        
+//        printWriter.write(buf);
+//        printWriter.close();
+//        
+//        return;
+        
         int N=0, D=0;
         
         try {
-            File file = new File("in.txt");
+            File file = new File("piepie.in");
             FileWriter fileWriter = new FileWriter("piepie.out");
             PrintWriter printWriter = new PrintWriter(fileWriter);
             Scanner sc = new Scanner(file);
@@ -80,6 +95,7 @@ public class PiePie {
             }
             
             printWriter.close();
+            fileWriter.close();
         } 
         catch (FileNotFoundException e) {
             e.printStackTrace();
